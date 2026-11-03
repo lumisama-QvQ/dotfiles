@@ -1,0 +1,18 @@
+[user]
+	email = 2510421067@stu.hfnu.edu.cn
+	name = lumisama-qvq
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJjFZymGggSzgFOM1kO4sdrzBl+m0AXVr6laSQ8OuhHZ
+[safe]
+	directory = /usr/share/flutter
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true

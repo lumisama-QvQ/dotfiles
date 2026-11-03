@@ -1,0 +1,71 @@
+# ~/.config/helix/config.toml
+
+# 主题：选择一款你喜欢的配色，Helix 内置了多款主题
+theme = "catppuccin_mocha"
+
+[editor]
+# 行号：relative 非常适合配合 Helix 的动词+名词操作模式进行快速跳转
+line-number = "relative"
+# 高亮当前行，帮助在代码中快速定位光标
+cursorline = true
+# 开启真彩色支持，让语法高亮更生动
+true-color = true
+# 光标上下方保留的上下文行数，8-10 是比较舒适的范围
+scrolloff = 8
+# 每次滚动的行数
+scroll-lines = 3
+# 自动保存：在缓冲区失去焦点或退出时自动保存，非常实用
+auto-save = true
+# 自动格式化：保存时自动调用格式化工具（需配置好 LSP/格式化器）
+auto-format = true
+# 关闭鼠标，鼓励纯键盘操作（可按需改为 true）
+mouse = false
+# 总是显示缓冲区标签栏，方便切换已打开的文件
+bufferline = "always"
+# 显示彩色模式（如插入、普通模式）提示
+color-modes = true
+# 弹出菜单的边框，设置为 "all" 会更清晰
+popup-border = "all"
+# 补全触发延迟（毫秒），设置较小值如 50 会更灵敏
+idle-timeout = 50
+# 输入几个字符后开始自动补全
+completion-trigger-len = 1
+# 选中补全项时直接替换，而不是插入
+completion-replace = true
+
+# 光标形状：在不同模式下使用不同形状，直观区分当前模式
+[editor.cursor-shape]
+insert = "bar"      # 插入模式：竖线
+normal = "block"    # 普通模式：方块
+select = "underline" # 选择模式：下划线
+
+# 缩进参考线：对于缩进敏感的语言（如 Python、YAML）非常有用
+[editor.indent-guides]
+render = true
+character = "┆"
+
+[editor.lsp]
+display-inlay-hints = true  # 显示类型推断等内联提示
+display-messages = true     # 显示 LSP 相关的消息
+
+[editor.inline-diagnostics]
+cursor-line = "error"    # 光标所在行显示错误
+other-lines = "warning"  # 其他行显示警告
+
+
+# 软换行：长行自动换行，避免横向滚动
+[editor.soft-wrap]
+enable = true
+max-wrap = 20        # 换行时最大缩进字符数
+max-indent-retain = 40 # 保留的缩进字符数
+# 文件选择器优化：忽略隐藏文件和 .gitignore 中的文件，提升搜索效率
+[editor.file-picker]
+hidden = true
+follow-symlinks = true
+deduplicate-links = true
+git-ignore = true
+parents = true
+max-depth = 4
+git-global = true
+[keys.insert]
+C-s = ":w"

@@ -1,0 +1,42 @@
+# ====== 主题与外观 ======
+# 内置了许多主题，可用 `ghostty +list-themes` 查看
+# 也可以设置跟随系统切换暗色/亮色主题
+theme = Catppuccin Macchiato
+window-padding-x = 10
+window-padding-y = 10
+window-width = 105
+window-height = 26
+# ====== 字体 ======
+# 推荐使用带 Nerd Font 补丁的字体，以正确显示图标
+# 如果系统没装，Ghostty 会回退到默认的 JetBrains Mono
+font-family = "Maple Mono NF CN"
+font-size = 16
+# 如果你不喜欢编程连字（Ligatures），可以关掉
+# font-feature = -calt
+
+# ====== 光标 ======
+cursor-style = bar
+cursor-style-blink = true
+
+# ====== 窗口与标签页行为 ======
+# macOS 下让标题栏更简洁
+macos-titlebar-style = tabs
+# 关闭最后一个窗口时退出 (Linux systemd 用户可配合 quit-after-last-window-closed 使用)
+# quit-after-last-window-closed = true
+
+# ====== 鼠标与剪贴板 ======
+# 选中即复制
+copy-on-select = clipboard
+# 打字时隐藏鼠标指针
+mouse-hide-while-typing = true
+
+# ====== Shell 集成 ======
+# 自动检测并启用 Shell 集成，支持提示符跳转、sudo 包装等
+shell-integration = detect
+
+# ====== 快捷键 (可选) ======
+# 示例：将新建标签页绑定为 Ctrl+Shift+T (Linux 常用习惯)
+# keybind = ctrl+shift+t=new_tab
+
+command = fish
+
